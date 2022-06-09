@@ -1,0 +1,67 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "lua",
+        "typescript",
+        "typescriptreact",
+        "javascript", 
+        "javascriptreact", 
+        "css", 
+        "less", 
+        "scss"
+    ],
+    "diagnostic.virtualText": true,
+    "diagnostic.virtualTextLines": 20,
+    "diagnostic.virtualTextCurrentLineOnly": false,
+    "diagnostic.enableSign": true,
+    "diagnostic-languageserver.filetypes": {
+        "typescript": "eslint_d",
+        "javascript": "eslint_d",
+        "typescriptreact": "eslint_d",
+        "javascriptreact": "eslint_d",
+        "typescript.tsx": "eslint_d",
+        "javascript.jsx": "eslint_d",
+        "markdown": "markdownlint",
+        "python": "jedi"
+    },
+    "diagnostic-languageserver.formatFiletypes": {
+        "typescript": "prettier_d_slim",
+        "javascript": "prettier_d_slim",
+        "typescriptreact": "prettier_d_slim",
+        "javascriptreact": "prettier_d_slim",
+        "typescript.tsx": "prettier_d_slim",
+        "javascript.jsx": "prettier_d_slim",
+        "markdown": "prettier_d_slim"
+    },
+    "diagnostic-languageserver.linters": {
+        "eslint_d": {
+            "command": "eslint_d",
+            "args": ["--stdin", "--stdin-filename", "%filepath", "--format", "json"],
+            "rootPatterns": [".git", ".eslintrc.js", ".eslintrc.yaml", ".eslintrc.json", "package.json"],
+            "sourceName": "eslint_d",
+            "parseJson": {
+                "errorsRoot": "[0].messages",
+                "message": "[eslint] ${message} [${ruleId}]",
+                "security": "severity"
+            },
+            "securities": {
+                "2": "error",
+                "1": "warning"
+            }
+        }
+    },
+    "diagnostic-languageserver.formatters": {
+        "prettier_d_slim": {
+            "command": "prettier_d_slim",
+            "args": ["--stdin", "--stdin-filepath", "%filename"],
+            "rootPatterns": [".git", ".prettierrc.json", "prettier.config.js", "package.json"]
+        }
+    },
+    "diagnostic-languageserver.mergeConfig": true,
+
+    "css.validate": false,
+    "less.validate": false,
+    "scss.validate": false,
+    "wxss.validate": false,
+    "stylelintplus.autoFixOnSave": true,
+    "stylelintplus.cssInJs": true
+}
